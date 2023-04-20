@@ -46,5 +46,6 @@ export default function About({}: Props) {
                 </p>
         </div>
     </motion.div>
+    
   )
 }

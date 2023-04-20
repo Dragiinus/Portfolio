@@ -20,7 +20,7 @@ export default function Hero({}: Props) {
         <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
             <BackgroundCircles />
             <img 
-            className="relartive rounded-full h-32 w-32 mx-auto"
+            className="relative rounded-full h-32 w-32 mx-auto"
             src="https://media.licdn.com/dms/image/D4E03AQHgRfS5E7HPnA/profile-displayphoto-shrink_800_800/0/1668516991401?e=1686787200&v=beta&t=EQJ1wtjc4tAuUEH6WqvDAwS2gk4v7oNyixSLqeQ3BTg" 
             alt="Photo de Melvin" 
             />
@@ -34,7 +34,7 @@ export default function Hero({}: Props) {
                 </h1>
 
                 <div className="pt-5">
-                    <Link href="#About">
+                    <Link href="#about">
                     <button className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm 
                         tracking-widest text-gray-500 transition-all 
                         hover:border-[#F7AB0A]/40 hover:text-[#FAB0A]/40">

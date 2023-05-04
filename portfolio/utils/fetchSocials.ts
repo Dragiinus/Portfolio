@@ -1,6 +1,6 @@
 import { Social } from "@/typings";
 
-export const fetchSocial = async() => {
+export const fetchSocial = async () => {
     const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`
     );
@@ -11,4 +11,4 @@ export const fetchSocial = async() => {
     // console.log("fetching", socials);
 
     return socials;
-}
+};

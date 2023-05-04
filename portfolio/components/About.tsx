@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { PageInfo } from '@/typings'
+import { urlFor } from '@/sanity'
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo
+}
 
-export default function About({}: Props) {
+export default function About({pageInfo}: Props) {
   return (
     <motion.div 
         initial={{ opacity:0 }}
@@ -26,7 +30,7 @@ export default function About({}: Props) {
             }}
             whileInView={{ opacity: 1,x: 0 }}
             viewport={{ once: true}}
-            src="https://pbs.twimg.com/profile_images/1646978345555353600/7Gb_WTHd_400x400.jpg"
+            src={urlFor(pageInfo?.profilePic).url()}
             className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
             md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
         />
@@ -37,12 +41,7 @@ export default function About({}: Props) {
                 background
                 </h4>
                 <p className="text-sm">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. 
-                Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. 
-                Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. 
-                Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. 
-                Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. 
-                Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. 
+                    {pageInfo?.backgroundInformation}
                 </p>
         </div>
     </motion.div>

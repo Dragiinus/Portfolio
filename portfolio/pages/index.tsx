@@ -14,6 +14,7 @@ import { fetchExperiences } from '@/utils/fetchExperiences'
 import { fetchSkills } from '@/utils/fetchSkills'
 import { fetchProjects } from '@/utils/fetchProjects'
 import { fetchSocial } from '@/utils/fetchSocials'
+import { urlFor } from '@/sanity'
 
 type Props = {
   pageInfo: PageInfo;
@@ -28,7 +29,7 @@ export default function Home({pageInfo, experiences, skills, projects, socials}:
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll 
     overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Head>
-        <title>Portfolio de Melvin</title>
+        <title>{pageInfo?.name} - Portfolio</title>
       </Head>
 
         <Header socials={socials} />
@@ -62,7 +63,7 @@ export default function Home({pageInfo, experiences, skills, projects, socials}:
             <div className="flex items-center justify-center">
               <img 
                 className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-                src="https://media.licdn.com/dms/image/D4E03AQHgRfS5E7HPnA/profile-displayphoto-shrink_800_800/0/1668516991401?e=1686787200&v=beta&t=EQJ1wtjc4tAuUEH6WqvDAwS2gk4v7oNyixSLqeQ3BTg" 
+                src={urlFor(pageInfo?.heroImage).url()} 
                 alt=""
               />
             </div>

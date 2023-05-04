@@ -39,7 +39,7 @@ export default function Header({ socials }: Props) {
             ))}
         </motion.div>
 
-        <Link href="#contact">
+        <div onClick={() => (window.location.href = "#contact")}>
             <motion.div
             initial={{
                 x: 500,
@@ -66,7 +66,7 @@ export default function Header({ socials }: Props) {
                     Get In Touch
                 </p>
             </motion.div>
-        </Link>
+        </div>
     </header>
     );
 }

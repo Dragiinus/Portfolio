@@ -14,7 +14,7 @@ import { fetchSkills } from '@/utils/fetchSkills'
 import { fetchProjects } from '@/utils/fetchProjects'
 import { fetchSocial } from '@/utils/fetchSocials'
 import { urlFor } from '@/sanity'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 
 type Props = {
   pageInfo: PageInfo;
@@ -73,7 +73,7 @@ export default function Home({pageInfo, experiences, skills, projects, socials}:
   )
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
@@ -87,6 +87,8 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
       skills,
       projects,
       socials,
-    }
+    },
+
+    revalidate: 10,
   }
 }

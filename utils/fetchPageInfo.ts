@@ -2,7 +2,7 @@ import { PageInfo } from "@/typings";
 
 export const fetchPageInfo = async () => {
     const res = await fetch(
-        `https://portfolio-dragiinus.vercel.app/api/getPageInfo`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/getPageInfo`
     );
 
     const data = await res.json()

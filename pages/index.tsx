@@ -15,7 +15,7 @@ import { fetchProjects } from '@/utils/fetchProjects'
 import { fetchSocial } from '@/utils/fetchSocials'
 import { urlFor } from '@/sanity'
 import { GetStaticProps } from 'next'
-
+ 
 type Props = {
   pageInfo: PageInfo;
   experiences: Experience[];
